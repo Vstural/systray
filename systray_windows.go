@@ -6,8 +6,8 @@ import (
 	"crypto/md5"
 	"fmt"
 	"io/ioutil"
-	"path/filepath"
 	"os"
+	"path/filepath"
 	"sync/atomic"
 
 	"github.com/lxn/walk"
@@ -102,6 +102,10 @@ func SetIcon(iconBytes []byte) {
 	if err != nil {
 		fail("Unable to make systray icon visible", err)
 	}
+}
+
+func SetIconFromImage(img walk.Image) {
+	notifyIcon.SetIcon(img)
 }
 
 // SetTemplateIcon sets the systray icon as a template icon (on macOS), falling back
