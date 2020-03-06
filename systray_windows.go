@@ -104,8 +104,8 @@ func SetIcon(iconBytes []byte) {
 	}
 }
 
-func SetIconFromImage(img walk.Image) {
-	notifyIcon.SetIcon(img)
+func SetIconFromImage(img walk.Image) error {
+	return notifyIcon.SetIcon(img)
 }
 
 // SetTemplateIcon sets the systray icon as a template icon (on macOS), falling back
